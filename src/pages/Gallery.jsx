@@ -15,7 +15,7 @@ const artworks = [
   {
     title: "Decorative Mirror Art",
     image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800",
+      "/images/Mirror.jpg",
   },
   {
     title: "Stone Craft Design",
