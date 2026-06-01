@@ -5,7 +5,7 @@ const artworks = [
   {
     title: "Khatu Shyam Handmade Artwork",
     image:
-      "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=800",
+      "/images/khatuji.jpeg",
   },
   {
     title: "Pearl Embellished Painting",
