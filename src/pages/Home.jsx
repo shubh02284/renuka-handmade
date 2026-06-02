@@ -111,7 +111,7 @@ function Home() {
 
       <div>
         <img
-          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200"
+          src="/images/renuka.jpeg"
           alt="Artist"
           className="rounded-2xl shadow-lg w-full"
         />

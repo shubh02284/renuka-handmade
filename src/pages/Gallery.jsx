@@ -1,40 +1,65 @@
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-const artworks = [
+
+const featuredArtworks = [
   {
     title: "Khatu Shyam Handmade Artwork",
-    image:
-      "/images/khatuji.jpeg",
+    image: "/images/khatuji.jpeg",
   },
   {
     title: "Pearl Embellished Painting",
-    image:
-      "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=800",
+    image: "/images/2.jpeg",
   },
   {
     title: "Decorative Mirror Art",
-    image:
-      "/images/Mirror.jpg",
+    image: "/images/mirror.png",
   },
   {
     title: "Stone Craft Design",
-    image:
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800",
-  },
-  {
-    title: "Customized Wall Art",
-    image:
-      "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=800",
+    image: "/images/stone.png",
   },
   {
     title: "Handmade Creative Piece",
-    image:
-      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=800",
+    image: "/images/handmade.jpeg",
+  },
+  {
+    title: "Mixed Media Peacock Wall Art",
+    image: "/images/5.jpeg",
+  },
+];
+
+const otherArtworks = [
+  {
+    title: "Festival Artwork",
+    image: "/images/festival.jpg",
+  },
+  {
+    title: "Custom Gift Art",
+    image: "/images/gift.jpg",
+  },
+  {
+    title: "Religious Artwork",
+    image: "/images/religious.jpg",
+  },
+  {
+    title: "Decor Piece",
+    image: "/images/decor.jpg",
+  },
+  {
+    title: "Creative Design",
+    image: "/images/design.jpg",
+  },
+  {
+    title: "Personalized Artwork",
+    image: "/images/personalized.jpg",
   },
 ];
 
 function Gallery() {
+  const [showAll, setShowAll] = useState(false);
+
   return (
     <>
       <Navbar />
@@ -49,17 +74,24 @@ function Gallery() {
             Explore handmade creations crafted with creativity and care.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            {artworks.map((item, index) => (
+          {/* Featured Creations */}
+          <h2 className="text-3xl font-bold text-amber-900 mt-12 mb-8">
+            Featured Creations
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {featuredArtworks.map((item, index) => (
               <div
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300"
               >
-                <img
-  src={item.image}
-  alt={item.title}
-  className="w-full h-64 object-cover hover:scale-110 transition duration-500"
-/>
+                <div className="overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-64 object-cover hover:scale-110 transition duration-500"
+                  />
+                </div>
 
                 <div className="p-5">
                   <h3 className="text-xl font-semibold text-amber-900">
@@ -71,15 +103,74 @@ function Gallery() {
                   </p>
 
                   <Link
-  to="/orders"
-  className="inline-block mt-4 bg-amber-800 text-white px-4 py-2 rounded-lg hover:bg-amber-900 transition"
->
-  Request Similar Artwork
-</Link>
+                    to="/orders"
+                    className="inline-block mt-4 bg-amber-800 text-white px-4 py-2 rounded-lg hover:bg-amber-900 transition"
+                  >
+                    Request Similar Artwork
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* View More Button */}
+          <div className="text-center mt-10">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="bg-amber-800 text-white px-6 py-3 rounded-lg hover:bg-amber-900 transition"
+            >
+              {showAll ? "Show Less" : "View More Creations"}
+            </button>
+          </div>
+
+          {/* Other Creations */}
+          {showAll && (
+            <>
+              <div className="text-center mt-16">
+                <h2 className="text-3xl font-bold text-amber-900">
+                  All Other Handmade Creations
+                </h2>
+
+                <p className="text-amber-700 mt-3">
+                  Explore more custom artwork, décor pieces and creative handmade designs.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8 mt-10">
+                {otherArtworks.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition duration-300"
+                  >
+                    <div className="overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-64 object-cover hover:scale-110 transition duration-500"
+                      />
+                    </div>
+
+                    <div className="p-5">
+                      <h3 className="text-xl font-semibold text-amber-900">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-2 text-amber-700">
+                        Made on Request
+                      </p>
+
+                      <Link
+                        to="/orders"
+                        className="inline-block mt-4 bg-amber-800 text-white px-4 py-2 rounded-lg hover:bg-amber-900 transition"
+                      >
+                        Request Similar Artwork
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
 
