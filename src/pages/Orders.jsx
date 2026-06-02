@@ -1,13 +1,18 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useLocation } from "react-router-dom";
 
 function Orders() {
+  const location = useLocation();
+  const selectedArtwork =
+  location.state?.artwork || "";
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     instagram: "",
     email: "",
+    artwork: selectedArtwork,
     description: "",
   });
 
@@ -134,6 +139,19 @@ function Orders() {
                 placeholder="example@email.com"
               />
             </div>
+
+            <div className="mb-5">
+  <label className="block mb-2 font-medium text-amber-900">
+    Selected Artwork
+  </label>
+
+  <input
+    type="text"
+    value={selectedArtwork}
+    readOnly
+    className="w-full border border-amber-200 rounded-lg p-3 bg-gray-100"
+  />
+</div>
 
             <div className="mb-5">
               <label className="block mb-2 font-medium text-amber-900">

@@ -104,6 +104,7 @@ function Gallery() {
 
                   <Link
                     to="/orders"
+                    state={{ artwork: item.title }}
                     className="inline-block mt-4 bg-amber-800 text-white px-4 py-2 rounded-lg hover:bg-amber-900 transition"
                   >
                     Request Similar Artwork
@@ -161,6 +162,7 @@ function Gallery() {
 
                       <Link
                         to="/orders"
+                        state={{ artwork: item.title }}
                         className="inline-block mt-4 bg-amber-800 text-white px-4 py-2 rounded-lg hover:bg-amber-900 transition"
                       >
                         Request Similar Artwork
