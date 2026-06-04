@@ -7,7 +7,7 @@ const featuredArtworks = [
   {
     title: "Khatu Shyam Handmade Artwork",
     image: "/images/khatuji.jpeg",
-    price: "Starting From ₹2,999",
+    price: "Starting From ₹4,999",
   },
   {
     title: "Pearl Embellished Painting",
@@ -27,12 +27,12 @@ const featuredArtworks = [
   {
     title: "Handmade Creative Piece",
     image: "/images/handmade.jpeg",
-    price: "Starting From ₹1,499",
+    price: "Starting From ₹3,999",
   },
   {
     title: "Mixed Media Peacock Wall Art",
     image: "/images/5.jpeg",
-    price: "Starting From ₹3,499",
+    price: "Starting From ₹3,999",
   },
 ];
 
