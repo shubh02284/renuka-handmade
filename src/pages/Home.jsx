@@ -88,7 +88,7 @@ function Home() {
 
       <div className="bg-amber-50 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
         <img
-          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800"
+          src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800"
           alt="Artwork"
           className="w-full h-64 object-cover"
         />

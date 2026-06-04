@@ -17,6 +17,8 @@ function Orders() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [imageFile, setImageFile] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -29,6 +31,19 @@ function Orders() {
     e.preventDefault();
 
     setLoading(true);
+    let imageData = "";
+
+  if (imageFile) {
+    imageData = await new Promise((resolve) => {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+
+      reader.readAsDataURL(imageFile);
+    });
+  }
 
     try {
     await fetch(
@@ -36,21 +51,27 @@ function Orders() {
   {
     method: "POST",
     mode: "no-cors",
-    body: JSON.stringify(formData),
+    body: JSON.stringify({
+  ...formData,
+  imageData,
+}),
   }
 );
 
-      alert(
-        "Thank you for your interest in Renuka Handmade. Your custom order request has been received."
-      );
-
+      setSubmitted(true);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
       setFormData({
         name: "",
         phone: "",
         instagram: "",
         email: "",
+        artwork: selectedArtwork,
         description: "",
       });
+      setImageFile(null);
     } catch (error) {
       alert("Something went wrong. Please try again.");
       console.error(error);
@@ -73,6 +94,19 @@ function Orders() {
             Tell us about your dream artwork and we'll create something special
             for you.
           </p>
+
+          {submitted && (
+            <div className="mb-6 bg-green-100 border border-green-300 text-green-800 p-4 rounded-lg">
+              <h3 className="font-bold text-lg">
+                ✅ Order Request Submitted
+              </h3>
+          
+              <p className="mt-1">
+                Thank you for contacting Renuka Handmade.
+                We have received your order request and will get back to you soon.
+              </p>
+            </div>
+          )}
 
           <form
             onSubmit={handleSubmit}
@@ -175,10 +209,27 @@ function Orders() {
               </label>
 
               <input
-                type="file"
-                accept="image/*"
-                className="w-full border border-amber-200 rounded-lg p-3"
-              />
+  type="file"
+  accept="image/*"
+  onChange={(e) => {
+    const file = e.target.files[0];
+
+    if (file && file.size > 5 * 1024 * 1024) {
+      alert("Please upload an image smaller than 5MB");
+      return;
+    }
+
+    setImageFile(file);
+  }}
+  className="w-full border border-amber-200 rounded-lg p-3"
+/>
+
+              {imageFile && (
+              <p className="text-green-600 mt-2">
+                Selected: {imageFile.name}
+              </p>
+              )}
+
             </div>
 
             <button

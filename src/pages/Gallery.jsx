@@ -7,26 +7,32 @@ const featuredArtworks = [
   {
     title: "Khatu Shyam Handmade Artwork",
     image: "/images/khatuji.jpeg",
+    price: "Starting From ₹2,999",
   },
   {
     title: "Pearl Embellished Painting",
     image: "/images/2.jpeg",
+    price: "Starting From ₹1,999",
   },
   {
     title: "Decorative Mirror Art",
     image: "/images/mirror.png",
+    price: "Starting From ₹2,499",
   },
   {
     title: "Stone Craft Design",
     image: "/images/stone.png",
+    price: "Starting From ₹1,799",
   },
   {
     title: "Handmade Creative Piece",
     image: "/images/handmade.jpeg",
+    price: "Starting From ₹1,499",
   },
   {
     title: "Mixed Media Peacock Wall Art",
     image: "/images/5.jpeg",
+    price: "Starting From ₹3,499",
   },
 ];
 
@@ -34,26 +40,32 @@ const otherArtworks = [
   {
     title: "Festival Artwork",
     image: "/images/festival.jpg",
+    price: "Starting From ₹1,499",
   },
   {
     title: "Custom Gift Art",
     image: "/images/gift.jpg",
+    price: "Starting From ₹999",
   },
   {
     title: "Religious Artwork",
     image: "/images/religious.jpg",
+    price: "Starting From ₹2,499",
   },
   {
     title: "Decor Piece",
     image: "/images/decor.jpg",
+    price: "Starting From ₹1,299",
   },
   {
     title: "Creative Design",
     image: "/images/design.jpg",
+    price: "Starting From ₹1,799",
   },
   {
     title: "Personalized Artwork",
     image: "/images/personalized.jpg",
+    price: "Starting From ₹1,999",
   },
 ];
 
@@ -97,6 +109,10 @@ function Gallery() {
                   <h3 className="text-xl font-semibold text-amber-900">
                     {item.title}
                   </h3>
+
+                  <p className="mt-2 text-lg font-bold text-green-700">
+                  {item.price}
+                  </p>
 
                   <p className="mt-2 text-amber-700">
                     Made on Request
@@ -156,6 +172,10 @@ function Gallery() {
                         {item.title}
                       </h3>
 
+                      <p className="mt-2 text-lg font-bold text-green-700">
+                      {item.price}
+                      </p>
+                      
                       <p className="mt-2 text-amber-700">
                         Made on Request
                       </p>
