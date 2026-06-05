@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import renuka from "../assets/renuka.jpg";
+import renuka from "/images/renuka1.png";
 
 function About() {
   return (
