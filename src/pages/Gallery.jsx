@@ -39,32 +39,32 @@ const featuredArtworks = [
 const otherArtworks = [
   {
     title: "Festival Artwork",
-    image: "/images/festival.jpg",
+    image: "/images/1.jpg",
     price: "Starting From ₹1,499",
   },
   {
     title: "Custom Gift Art",
-    image: "/images/gift.jpg",
+    image: "/images/Custom.png",
     price: "Starting From ₹999",
   },
   {
-    title: "Religious Artwork",
-    image: "/images/religious.jpg",
+    title: "Texture Artwork",
+    image: "/images/download.png",
     price: "Starting From ₹2,499",
   },
   {
     title: "Decor Piece",
-    image: "/images/decor.jpg",
+    image: "/images/wall.png",
     price: "Starting From ₹1,299",
   },
   {
-    title: "Creative Design",
-    image: "/images/design.jpg",
+    title: "FrontPage Design",
+    image: "/images/frontpage.png",
     price: "Starting From ₹1,799",
   },
   {
     title: "Personalized Artwork",
-    image: "/images/personalized.jpg",
+    image: "/images/personalized.png",
     price: "Starting From ₹1,999",
   },
 ];
