@@ -161,16 +161,17 @@ function Orders() {
 
             <div className="mb-5">
               <label className="block mb-2 font-medium text-amber-900">
-                Email (Optional)
+                Email *
               </label>
 
               <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full border border-amber-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                placeholder="example@email.com"
+              type="email"
+              name="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full border border-amber-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              placeholder="example@email.com"
               />
             </div>
 

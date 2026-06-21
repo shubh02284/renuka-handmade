@@ -35,6 +35,9 @@ function Navbar() {
           <Link to="/contact" className="hover:text-amber-700">
             Contact
           </Link>
+          <Link to="/admin" className="hover:text-amber-700">
+            Admin
+          </Link>
         </div>
 
       </div>
