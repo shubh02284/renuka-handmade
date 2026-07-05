@@ -47,7 +47,7 @@ function Orders() {
 
     try {
     await fetch(
-  "https://script.google.com/macros/s/AKfycbwYdH0hd_Fv07jI_o2ro_ZhLdd5qp4oXJgsTuVspqXI0WMfDjXfxYnohHWlbp1B-UTADw/exec",
+  "https://script.google.com/macros/s/AKfycbwQsxgeF07naA26gfe0Uux_G6UrMa7G4a2rAzQ-elGVt8OsXcGJJoFF7mlCBspnWzAISw/exec",
   {
     method: "POST",
     mode: "no-cors",
